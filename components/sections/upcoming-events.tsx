@@ -4,7 +4,7 @@ const events = [
   {
     id: 1,
     name: 'CBC Meeting #3',
-    date: 'Friday, 5 June 2025',
+    date: 'Friday, 5 June 2025 · 17:00',
     description: 'Talks on Claude Routines and more!',
     location: 'Theresienstraße 90',
     locationHref: 'https://nav.tum.de/room/0101.02.128',

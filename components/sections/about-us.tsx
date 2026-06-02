@@ -7,7 +7,7 @@ const members = [
   {
     name: 'Oskar Breitfeld',
     role: 'Claude Ambassador',
-    details: null,
+    details: 'Claude Builders Club TUM · Built together · Student community',
   },
   {
     name: 'Empalo',
