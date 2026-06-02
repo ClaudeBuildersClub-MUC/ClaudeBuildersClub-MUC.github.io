@@ -1,12 +1,25 @@
 const members = [
-  { name: 'Oskar Breitfeld',  role: 'Claude Ambassador @ TUM' },
-  { name: 'Someone Someone',  role: 'Claude Ambassador @ TUM' },
-  { name: 'Tinatin Gholadze', role: 'CBC Member' },
-  { name: 'Benno Kolar',      role: 'CBC Member' },
+  {
+    name: 'Tinatin Gholadze',
+    role: 'President',
+  },
+  {
+    name: 'Oskar Breitfeld',
+    role: 'Claude Ambassador',
+  },
+  {
+    name: 'Empalo',
+    role: 'Claude Ambassador',
+  },
+  {
+    name: 'Benno Kolar',
+    role: 'CBC Engineer · Double Bachelor @ TUM · Junior Consultant @ TNG',
+  },
 ];
 
 function Initials({ name }: { name: string }) {
   const parts = name.trim().split(' ');
+  if (parts.length === 1) return <>{name.slice(0, 2).toUpperCase()}</>;
   return <>{parts[0][0]}{parts[parts.length - 1][0]}</>;
 }
 
@@ -27,7 +40,6 @@ export function AboutUs() {
               key={name}
               className="glass-card rounded-2xl shadow-lift p-6 flex flex-col items-center gap-4 text-center"
             >
-              {/* Avatar — initials until photos are added */}
               <div
                 className="h-20 w-20 rounded-full flex items-center justify-center text-xl font-semibold text-warm-accent border-2 border-warm-accent/25"
                 style={{ background: 'hsl(var(--warm-accent) / 0.08)' }}
@@ -35,9 +47,9 @@ export function AboutUs() {
                 <Initials name={name} />
               </div>
 
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1.5">
                 <p className="text-sm font-semibold text-foreground">{name}</p>
-                <p className="text-xs text-foreground/55">{role}</p>
+                <p className="text-xs text-foreground/55 leading-relaxed">{role}</p>
               </div>
             </div>
           ))}

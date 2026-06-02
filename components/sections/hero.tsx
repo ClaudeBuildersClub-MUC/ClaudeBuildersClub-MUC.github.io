@@ -18,7 +18,7 @@ export function Hero() {
             Enabling the next generation of Builders @ TUM
           </p>
         </div>
-        <div className="relative h-64 sm:h-80">
+        <div className="relative h-56 sm:h-72">
           <Image
             src="/hero-wallpaper.jpg"
             alt="Claude Builders Club Munich"
@@ -29,12 +29,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* ── Desktop: image fills right column edge-to-edge, no gap ── */}
-      <div className="hidden lg:grid lg:grid-cols-2 lg:min-h-[82vh]">
+      {/* ── Desktop: fixed-height split, image borders text ── */}
+      <div className="hidden lg:grid lg:grid-cols-2 lg:h-[560px]">
 
-        {/* Text — left column, padded to align with container-wide */}
+        {/* Text — left column */}
         <div
-          className="flex flex-col justify-center gap-6 py-32 pr-12"
+          className="flex flex-col justify-center gap-6 py-16 pr-10"
           style={{ paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))' }}
         >
           <span className="w-fit rounded-full border border-warm-accent/30 bg-warm-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-warm-accent">
@@ -49,8 +49,8 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Image — right column, fills full grid row height */}
-        <div className="relative h-full">
+        {/* Image — right column fills exact section height */}
+        <div className="relative">
           <Image
             src="/hero-wallpaper.jpg"
             alt="Claude Builders Club Munich"

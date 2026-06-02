@@ -1,5 +1,5 @@
 const DISCORD_URL = 'https://discord.gg/pND8b8gyj';
-const YEAR = 2025;
+const YEAR = 2026;
 
 export function Footer() {
   return (
