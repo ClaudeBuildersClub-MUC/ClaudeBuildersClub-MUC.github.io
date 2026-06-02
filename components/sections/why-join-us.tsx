@@ -1,13 +1,14 @@
-import { Gift, Rocket } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 
-const reasons: { icon: LucideIcon; title: string; body: string }[] = [
+const reasons = [
   {
-    icon: Gift,
+    illustration: '/images/gift.svg',
+    icon: null,
     title: 'Free Resources',
     body: 'Members get access to Claude Pro and free Anthropic API credits — everything you need to start building without worrying about costs.',
   },
   {
+    illustration: null,
     icon: Rocket,
     title: 'Community & Events',
     body: 'Hackathons, meetups, talks, and hands-on project support from a community of TUM students who are serious about building with AI.',
@@ -16,9 +17,8 @@ const reasons: { icon: LucideIcon; title: string; body: string }[] = [
 
 export function WhyJoinUs() {
   return (
-    <section className="bg-background py-16 sm:py-20">
+    <section id="why-join" className="bg-background py-16 sm:py-20">
       <div className="container-wide">
-        {/* Section header */}
         <div className="mb-10 text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-warm-accent">
             Why join
@@ -27,14 +27,25 @@ export function WhyJoinUs() {
         </div>
 
         <div className="grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:gap-x-20">
-          {reasons.map(({ icon: Icon, title, body }) => (
+          {reasons.map(({ illustration, icon: Icon, title, body }) => (
             <div key={title} className="flex gap-5">
-              {/* Icon chip */}
-              <div
-                className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-                style={{ background: 'hsl(var(--warm-accent) / 0.12)' }}
-              >
-                <Icon className="h-5 w-5 text-warm-accent" />
+              {/* Visual — custom SVG illustration or icon chip */}
+              <div className="mt-1 shrink-0">
+                {illustration ? (
+                  <img
+                    src={illustration}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-14 w-auto object-contain"
+                  />
+                ) : Icon ? (
+                  <div
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-xl"
+                    style={{ background: 'hsl(var(--warm-accent) / 0.12)' }}
+                  >
+                    <Icon className="h-5 w-5 text-warm-accent" />
+                  </div>
+                ) : null}
               </div>
 
               <div className="flex flex-col gap-2">

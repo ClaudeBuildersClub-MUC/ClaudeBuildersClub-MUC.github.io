@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Lora } from 'next/font/google';
 import localFont from 'next/font/local';
+import { Navbar } from '@/components/layout/navbar';
 import './globals.css';
 
 const inter = Inter({
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${inter.variable} ${lora.variable} ${charter.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+          <Navbar />
+          {children}
+        </body>
     </html>
   );
 }

@@ -160,6 +160,11 @@
   }
 }
 
+/* Offset anchor targets so the sticky navbar doesn't cover them */
+section[id] {
+  scroll-margin-top: 4rem; /* matches h-16 */
+}
+
 /* ── Zurich custom utility classes ── */
 
 .mesh-gradient {

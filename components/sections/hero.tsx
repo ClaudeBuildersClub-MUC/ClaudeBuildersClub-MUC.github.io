@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background mesh-gradient">
+    <section id="hero" className="relative overflow-hidden bg-background mesh-gradient">
       <div className="container-wide py-20 sm:py-28 lg:py-36">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
@@ -25,7 +25,7 @@ export function Hero() {
           {/* Image — second in DOM = below text on mobile, right on desktop */}
           <div className="relative h-64 sm:h-80 lg:h-[520px]">
             <Image
-              src="/hero-wallpaper.webp"
+              src="/hero-wallpaper.jpg"
               alt="Claude Builders Club Munich"
               fill
               className="object-contain object-center lg:object-right"
