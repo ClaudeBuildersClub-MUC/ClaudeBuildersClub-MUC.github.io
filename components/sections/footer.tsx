@@ -1,4 +1,5 @@
 const DISCORD_URL = 'https://discord.gg/pND8b8gyj';
+const LINKEDIN_URL = 'https://www.linkedin.com/company/claude-builders-club-munich/';
 const YEAR = 2026;
 
 export function Footer() {
@@ -18,6 +19,15 @@ export function Footer() {
               className="link-underline hover:text-warm-accent transition-colors"
             >
               Discord
+            </a>
+            <span>·</span>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline hover:text-warm-accent transition-colors"
+            >
+              LinkedIn
             </a>
             <span>·</span>
             <span>© {YEAR}</span>
