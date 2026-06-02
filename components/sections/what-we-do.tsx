@@ -9,7 +9,7 @@ const activities = [
     svg: '/images/connected-world.svg',
     title: 'Meetups & Workshops',
     description:
-      'Hands-on sessions and talks from builders in the ecosystem — practical knowledge, no fluff.',
+      'Hands-on sessions and talks — by members, experts and Anthropic engineers.',
   },
   {
     svg: '/images/hands-connecting.svg',
