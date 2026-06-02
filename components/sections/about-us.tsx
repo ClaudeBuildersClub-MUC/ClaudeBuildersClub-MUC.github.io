@@ -2,8 +2,8 @@ const members = [
   {
     name: 'Tinatin Gholadze',
     role: 'President',
-    details: null,
-    linkedin: null,
+    details: 'M.Sc. Management and Technology @ TUM · Applied AI Engineer',
+    linkedin: 'https://www.linkedin.com/in/tina-gholadze/',
   },
   {
     name: 'Oskar Breitfeld',
