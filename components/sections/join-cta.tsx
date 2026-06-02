@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 
-const DISCORD_URL = '#';
+const DISCORD_URL = 'https://discord.gg/pND8b8gyj';
 
 export function JoinCTA() {
   return (

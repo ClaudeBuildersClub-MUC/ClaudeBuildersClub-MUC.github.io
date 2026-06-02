@@ -1,9 +1,14 @@
-const placeholders = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
+const members = [
+  { name: 'Oskar Breitfeld',  role: 'Claude Ambassador @ TUM' },
+  { name: 'Someone Someone',  role: 'Claude Ambassador @ TUM' },
+  { name: 'Tinatin Gholadze', role: 'CBC Member' },
+  { name: 'Benno Kolar',      role: 'CBC Member' },
 ];
+
+function Initials({ name }: { name: string }) {
+  const parts = name.trim().split(' ');
+  return <>{parts[0][0]}{parts[parts.length - 1][0]}</>;
+}
 
 export function AboutUs() {
   return (
@@ -17,26 +22,26 @@ export function AboutUs() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {placeholders.map(({ id }) => (
+          {members.map(({ name, role }) => (
             <div
-              key={id}
+              key={name}
               className="glass-card rounded-2xl shadow-lift p-6 flex flex-col items-center gap-4 text-center"
             >
+              {/* Avatar — initials until photos are added */}
               <div
-                className="h-20 w-20 rounded-full flex items-center justify-center text-warm-accent/40 text-xs font-semibold uppercase tracking-wider border-2 border-dashed border-warm-accent/25"
-                style={{ background: 'hsl(var(--warm-accent) / 0.06)' }}
+                className="h-20 w-20 rounded-full flex items-center justify-center text-xl font-semibold text-warm-accent border-2 border-warm-accent/25"
+                style={{ background: 'hsl(var(--warm-accent) / 0.08)' }}
               >
-                Photo
+                <Initials name={name} />
               </div>
-              <div className="h-4 w-28 rounded-full bg-foreground/10" />
-              <div className="h-3 w-20 rounded-full bg-foreground/6" />
+
+              <div className="flex flex-col gap-1">
+                <p className="text-sm font-semibold text-foreground">{name}</p>
+                <p className="text-xs text-foreground/55">{role}</p>
+              </div>
             </div>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-sm text-foreground/40">
-          Team details coming soon.
-        </p>
       </div>
     </section>
   );

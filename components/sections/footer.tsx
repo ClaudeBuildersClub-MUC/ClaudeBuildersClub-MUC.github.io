@@ -1,4 +1,4 @@
-const DISCORD_URL = '#';
+const DISCORD_URL = 'https://discord.gg/pND8b8gyj';
 const YEAR = 2025;
 
 export function Footer() {
