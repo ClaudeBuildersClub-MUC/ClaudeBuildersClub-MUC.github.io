@@ -2,12 +2,12 @@ const reasons = [
   {
     illustration: '/images/gift.svg',
     title: 'Free Resources',
-    body: 'Members get access to Claude Pro and free Anthropic API credits — everything you need to start building without worrying about costs.',
+    body: 'Members get access to Claude Pro and free Anthropic API credits — everything the builders and founders of tomorrow need to start building today.',
   },
   {
     illustration: '/images/hand-holding-book.svg',
     title: 'Community & Events',
-    body: 'Hackathons, meetups, talks, and hands-on project support from a community of TUM students who are serious about building with AI.',
+    body: 'Hackathons, meetups, talks, and hands-on project support — by members, experts and Anthropic engineers.',
   },
 ];
 

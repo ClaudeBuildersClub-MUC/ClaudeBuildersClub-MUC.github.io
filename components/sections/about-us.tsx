@@ -2,18 +2,22 @@ const members = [
   {
     name: 'Tinatin Gholadze',
     role: 'President',
+    details: null,
   },
   {
     name: 'Oskar Breitfeld',
     role: 'Claude Ambassador',
+    details: null,
   },
   {
     name: 'Empalo',
     role: 'Claude Ambassador',
+    details: null,
   },
   {
     name: 'Benno Kolar',
-    role: 'CBC Engineer · Double Bachelor @ TUM · Junior Consultant @ TNG',
+    role: 'CBC Engineer',
+    details: 'Double Bachelor @ TUM · Junior Consultant @ TNG',
   },
 ];
 
@@ -34,22 +38,33 @@ export function AboutUs() {
           <h2 className="text-headline mt-3">About Us</h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {members.map(({ name, role }) => (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {members.map(({ name, role, details }) => (
             <div
               key={name}
-              className="glass-card rounded-2xl shadow-lift p-6 flex flex-col items-center gap-4 text-center"
+              className="glass-card rounded-2xl shadow-lift p-5 flex items-center gap-4"
             >
+              {/* Avatar */}
               <div
-                className="h-20 w-20 rounded-full flex items-center justify-center text-xl font-semibold text-warm-accent border-2 border-warm-accent/25"
+                className="h-14 w-14 shrink-0 rounded-full flex items-center justify-center text-base font-semibold text-warm-accent border-2 border-warm-accent/25"
                 style={{ background: 'hsl(var(--warm-accent) / 0.08)' }}
               >
                 <Initials name={name} />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <p className="text-sm font-semibold text-foreground">{name}</p>
-                <p className="text-xs text-foreground/55 leading-relaxed">{role}</p>
+              {/* Text */}
+              <div className="flex flex-col gap-0.5 min-w-0">
+                {/* Name + role on same line */}
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span className="text-sm font-semibold text-foreground">{name}</span>
+                  <span className="rounded-full bg-warm-accent/10 px-2.5 py-0.5 text-xs font-medium text-warm-accent">
+                    {role}
+                  </span>
+                </div>
+                {/* Details below */}
+                {details && (
+                  <p className="text-xs text-foreground/50 leading-relaxed">{details}</p>
+                )}
               </div>
             </div>
           ))}
