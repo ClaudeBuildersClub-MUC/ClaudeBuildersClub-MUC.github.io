@@ -14,10 +14,10 @@ const members = [
     github: 'joschi655',
   },
   {
-    name: 'Empalo',
+    name: 'Emanuel Ploch',
     role: 'Claude Ambassador',
-    details: null,
-    linkedin: null,
+    details: 'Double Major @TUM | SynBio AI',
+    linkedin: 'https://www.linkedin.com/in/emanuel-ploch/',
     github: null,
   },
   {
@@ -25,6 +25,13 @@ const members = [
     role: 'CBC Engineer',
     details: 'Double Bachelor @ TUM · Junior Consultant @ TNG',
     linkedin: 'https://www.linkedin.com/in/benno-kolar/',
+    github: 'BambooTheBear',
+  },
+  {
+    name: 'David Romanowski',
+    role: 'CBC Head of Outreach',
+    details: null,
+    linkedin: 'https://www.linkedin.com/in/david-romanovsky-61853525a/',
     github: null,
   },
 ];
@@ -85,7 +92,7 @@ export function AboutUs() {
           <h2 className="text-headline mt-3">About Us</h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {members.map(({ name, role, details, linkedin, github }) => (
             <div
               key={name}
