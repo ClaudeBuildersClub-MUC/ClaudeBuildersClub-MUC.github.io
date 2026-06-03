@@ -26,7 +26,7 @@ const members = [
   },
   {
     name: 'Benno Kolar',
-    role: 'CBC Engineer',
+    role: 'CBC Head of Engineering',
     details: 'Double Bachelor @ TUM · Junior Consultant @ TNG',
     linkedin: 'https://www.linkedin.com/in/benno-kolar/',
     github: null,
