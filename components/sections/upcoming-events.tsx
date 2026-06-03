@@ -11,9 +11,9 @@ export function UpcomingEvents() {
           <h2 className="text-headline mt-3">Upcoming Events</h2>
         </div>
 
-        <div className="flex flex-col gap-8 items-center">
+        <div className="grid gap-6 lg:grid-cols-2 items-stretch">
           {/* CBC Meeting #3 */}
-          <div className="glass-card rounded-2xl shadow-lift p-8 flex flex-col gap-5 w-full max-w-2xl">
+          <div className="glass-card rounded-2xl shadow-lift p-8 flex flex-col gap-5">
             <div className="flex items-center gap-2 text-warm-accent">
               <Calendar className="h-4 w-4 shrink-0" />
               <span className="text-base font-semibold">Friday, 5 June 2025 · 17:00</span>
@@ -50,16 +50,18 @@ export function UpcomingEvents() {
           </div>
 
           {/* Education Hackathon — Luma embed */}
-          <iframe
-            src="https://lu.ma/embed/event/evt-rHvzuVnPWVWmOVQ/simple"
-            width="600"
-            height="450"
-            frameBorder="0"
-            style={{ border: '1px solid #bfcbda88', borderRadius: '4px' }}
-            allow="fullscreen; payment"
-            aria-hidden={false}
-            tabIndex={0}
-          />
+          <div className="flex items-center justify-center">
+            <iframe
+              src="https://lu.ma/embed/event/evt-rHvzuVnPWVWmOVQ/simple"
+              width="600"
+              height="450"
+              frameBorder="0"
+              style={{ border: '1px solid #bfcbda88', borderRadius: '4px', maxWidth: '100%' }}
+              allow="fullscreen; payment"
+              aria-hidden={false}
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </section>
