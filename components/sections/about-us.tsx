@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 const members = [
   {
     name: 'Tinatin Gholadze',
@@ -36,31 +40,44 @@ const members = [
   },
 ];
 
-function Initials({ name }: { name: string }) {
-  const parts = name.trim().split(' ');
-  if (parts.length === 1) return <>{name.slice(0, 2).toUpperCase()}</>;
-  return <>{parts[0][0]}{parts[parts.length - 1][0]}</>;
+function linkedInUsername(url: string): string {
+  return url.replace(/\/$/, '').split('/in/')[1] ?? '';
 }
 
-function Avatar({ name, github }: { name: string; github: string | null }) {
-  if (github) {
+function Avatar({ name, github, linkedin }: { name: string; github: string | null; linkedin: string | null }) {
+  const [failed, setFailed] = useState(false);
+
+  const src = github
+    ? `https://github.com/${github}.png`
+    : linkedin
+    ? `https://unavatar.io/linkedin/${linkedInUsername(linkedin)}`
+    : null;
+
+  const parts = name.trim().split(' ');
+  const initials = parts.length === 1
+    ? name.slice(0, 2).toUpperCase()
+    : `${parts[0][0]}${parts[parts.length - 1][0]}`;
+
+  if (src && !failed) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={`https://github.com/${github}.png`}
+        src={src}
         alt={name}
         width={80}
         height={80}
         className="h-20 w-20 rounded-full object-cover border-2 border-warm-accent/25"
+        onError={() => setFailed(true)}
       />
     );
   }
+
   return (
     <div
       className="h-20 w-20 rounded-full flex items-center justify-center text-xl font-semibold text-warm-accent border-2 border-warm-accent/25"
       style={{ background: 'hsl(var(--warm-accent) / 0.08)' }}
     >
-      <Initials name={name} />
+      {initials}
     </div>
   );
 }
@@ -98,7 +115,7 @@ export function AboutUs() {
               key={name}
               className="glass-card rounded-2xl shadow-lift p-6 flex flex-col items-center gap-4 text-center"
             >
-              <Avatar name={name} github={github} />
+              <Avatar name={name} github={github} linkedin={linkedin} />
 
               <div className="flex flex-col items-center gap-2">
                 <p className="text-sm font-semibold text-foreground">{name}</p>
