@@ -29,7 +29,7 @@ const members = [
     role: 'CBC Engineer',
     details: 'Double Bachelor @ TUM · Junior Consultant @ TNG',
     linkedin: 'https://www.linkedin.com/in/benno-kolar/',
-    github: 'BambooTheBear',
+    github: null,
   },
   {
     name: 'David Romanowski',
