@@ -20,7 +20,7 @@ const members = [
   {
     name: 'Emanuel Ploch',
     role: 'Claude Ambassador',
-    details: 'Double Major @TUM | SynBio AI',
+    details: 'Double Major @ TUM · SynBio AI',
     linkedin: 'https://www.linkedin.com/in/emanuel-ploch/',
     github: null,
   },
